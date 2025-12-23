@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mountain Рассрочка</title>
+    <title>Mountain Рассрочка | Премиальный сервис</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -37,7 +37,7 @@
             transform: scale(1.02);
         }
 
-        /* Modal Styles */
+        /* Стили модального окна */
         #imageModal {
             display: none;
             position: fixed;
@@ -88,7 +88,7 @@
                 Mountain <span class="gradient-text">Рассрочка</span>
             </h1>
             <p class="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed">
-                Профессиональный инструмент для работы по нормам исламских финансов.
+                Этичный бизнес на вершине порядка. Профессиональный инструмент для работы по нормам исламских финансов.
             </p>
         </header>
 
@@ -144,25 +144,32 @@
                 </div>
             </div>
 
-            <!-- Галерея -->
+            <!-- Галерея (Сетка изменена для лучшей навигации) -->
             <div class="lg:col-span-7">
                 <div class="grid grid-cols-2 gap-4 auto-rows-[200px]">
+                    <!-- Основной скриншот -->
                     <div class="col-span-2 row-span-2 overflow-hidden rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/50">
-                        <img src="img/rass-1.jpg" class="product-img w-full h-full object-cover" alt="Интерфейс системы рассрочки 1" onclick="openModal(this.src)">
+                        <img src="img/products/rassrochka/main-dashboard.jpg" class="product-img w-full h-full object-cover" alt="Рабочий стол системы" onclick="openModal(this.src)">
                     </div>
+                    <!-- Второстепенные скриншоты -->
                     <div class="row-span-2 overflow-hidden rounded-[32px] border border-slate-100 shadow-lg">
-                        <img src="img/rass-2.jpg" class="product-img w-full h-full object-cover" alt="Интерфейс системы рассрочки 2" onclick="openModal(this.src)">
+                        <img src="img/products/rassrochka/clients-list.jpg" class="product-img w-full h-full object-cover" alt="Список клиентов" onclick="openModal(this.src)">
                     </div>
                     <div class="overflow-hidden rounded-[32px] border border-slate-100 shadow-lg">
-                        <img src="img/rass-3.jpg" class="product-img w-full h-full object-cover" alt="Мобильная версия" onclick="openModal(this.src)">
+                        <img src="img/products/rassrochka/mobile-app.jpg" class="product-img w-full h-full object-cover" alt="Мобильный интерфейс" onclick="openModal(this.src)">
                     </div>
                     <div class="overflow-hidden rounded-[32px] border border-slate-100 shadow-lg">
-                        <img src="img/rass-4.jpg" class="product-img w-full h-full object-cover" alt="Графики платежей" onclick="openModal(this.src)">
+                        <img src="img/products/rassrochka/payment-calendar.jpg" class="product-img w-full h-full object-cover" alt="Календарь оплат" onclick="openModal(this.src)">
                     </div>
-                    <!-- Дополнительные слоты для новых фото -->
+                    
+                    <!-- Слот для новой фотографии (просто скопируйте этот блок ниже) -->
+                    <!-- <div class="overflow-hidden rounded-[32px] border border-slate-100 shadow-lg">
+                        <img src="img/products/rassrochka/ИМЯ_ФАЙЛА.jpg" class="product-img w-full h-full object-cover" alt="Описание" onclick="openModal(this.src)">
+                    </div> -->
+
                     <div class="col-span-2 overflow-hidden rounded-[32px] border border-slate-100 shadow-lg">
                         <div class="w-full h-full bg-slate-50 flex items-center justify-center text-slate-300 font-bold italic text-2xl p-8 text-center border-2 border-dashed border-slate-200">
-                            Больше скриншотов в панели управления
+                            Добавьте новые фото в папку /img/products/rassrochka/
                         </div>
                     </div>
                 </div>
@@ -170,10 +177,10 @@
         </div>
     </main>
 
-    <!-- Модальное окно для просмотра фото -->
+    <!-- Модальное окно -->
     <div id="imageModal" onclick="closeModal()">
         <button class="absolute top-10 right-10 text-slate-900 bg-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center font-bold hover:bg-slate-50 transition-colors">✕</button>
-        <img id="modalImage" src="" alt="Full size preview">
+        <img id="modalImage" src="" alt="Предпросмотр изображения">
     </div>
 
     <script>
@@ -183,18 +190,27 @@
         function openModal(src) {
             modal.style.display = 'flex';
             modalImg.src = src;
-            document.body.style.overflow = 'hidden'; // Запрет прокрутки
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeModal() {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Возврат прокрутки
+            document.body.style.overflow = 'auto'; 
         }
 
-        // Закрытие по клавише Esc
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
     </script>
+
+    <!-- 
+    ИНСТРУКЦИЯ ПО ДОБАВЛЕНИЮ ФОТО (ДЛЯ GITHUB):
+    1. Перейдите в папку проекта.
+    2. Создайте путь: /img/products/rassrochka/
+    3. Загрузите туда фото с понятными названиями (напр. settings.jpg, reports.jpg).
+    4. В этом файле (index.html) найдите секцию "Галерея".
+    5. Скопируйте блок <div> с тегом <img> и замените путь в src="...".
+    -->
+
 </body>
 </html>
